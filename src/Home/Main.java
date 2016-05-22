@@ -41,7 +41,7 @@ public class Main {
     private static String token;
     public static void main(String[] args) throws IOException {
         if(args.length != 1){
-            System.out.println("You must include a token!");
+            System.out.println("You must include a token! Duh!");
             System.exit(-1);
         }
         token = args[0];
@@ -161,7 +161,8 @@ public class Main {
             delay();
             System.out.println("Done! Setting name to " + Settings.getName());
             delay();
-            if (api.getYourself().getName() != Settings.getName()) {
+            if (api.getYourself().getName().equals(Settings.getName())) {
+            }else{
                 api.updateUsername(Settings.getName());
             }
             System.out.println("Name set! Moving on.. Parsing all classes now.");
