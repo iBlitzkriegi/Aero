@@ -24,7 +24,7 @@ public class Suggest implements MessageCreateListener {
             if (args[0].equalsIgnoreCase("suggest")) {
                 message.delete();
                 if (args.length == 1) {
-                    message.reply("gg");
+                    message.getAuthor().sendMessage("You must specify a suggestion! WARNING! You only get one suggestion per restart!");
                 } else if(args.length > 1) {
                     if (rawr.contains(message.getAuthor().getId())) {
                         message.reply("You get one suggestion per restart! You have already made your suggestion :)");
