@@ -7,7 +7,7 @@ public class Settings {
     private static String commandStart = "-";
     private static String msgStart = "Ӝ ";
     private static String game = "Getting recoded.";
-    private static String version = "Alpha 0.1.8";
+    private static String version = "Alpha 0.1.9";
     private static String name = "Dank Gasai";
 
     public static String getGame()

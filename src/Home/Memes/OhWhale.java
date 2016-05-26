@@ -17,7 +17,7 @@ public class OhWhale implements MessageCreateListener {
             String[] args = message.getContent().split(" ");
             args[0] = args[0].replaceFirst(Settings.getCommandStart(), "");
             Channel c = message.getChannelReceiver();
-            c.sendFile(Memecatch.imageCache.get("ohwhale"), "Oh whale " + message.getAuthor().getMentionTag() + "!");
+            c.sendFile(Memecatch.imageCache.get("ohwhale"));
         }
     }
 }

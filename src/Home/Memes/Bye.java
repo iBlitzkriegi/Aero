@@ -17,7 +17,7 @@ public class Bye implements MessageCreateListener{
             String[] args = message.getContent().split(" ");
             args[0] = args[0].replaceFirst(Settings.getCommandStart(), "");
             Channel c = message.getChannelReceiver();
-            c.sendFile(Memecatch.imageCache.get("bye"), Settings.getMsgStart() + message.getAuthor().getMentionTag() + ", ok.... Bye!");
+            c.sendFile(Memecatch.imageCache.get("bye"));
         }
     }
 }

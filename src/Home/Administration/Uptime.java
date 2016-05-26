@@ -27,7 +27,7 @@ public class Uptime implements MessageCreateListener{
             long hours = minutes / 60;
             long days = hours / 24;
             String time = days + " days, " + hours % 24 + " hours, " + minutes % 60 + " minutes and " + seconds % 60 + " seconds";
-            message.reply(Settings.getMsgStart() + "I've been awake for " + time);
+            message.reply(Settings.getMsgStart() + "I've been awake for " + time + "... Kill me please " + message.getAuthor().getMentionTag());
 
         }
     }
