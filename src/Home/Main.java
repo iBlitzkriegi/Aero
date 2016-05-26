@@ -39,93 +39,85 @@ public class Main {
     public static long startupTime;
     private static String token;
     public static void main(String[] args) {
-        if(args.length != 1){
+        if (args.length != 1) {
             System.out.println("You must include a token!");
             System.exit(-1);
         }
         token = args[0];
         final DiscordAPI api = Javacord.getApi(token, true);
-        File file = new File("suggestions.txt");
-        if (file != null) {
-            file.delete();
+            api.registerListener(new Shutdown());
+            api.registerListener(new Bye());
+            api.registerListener(new Help());
+            api.registerListener(new Youtube());
+            Memecatch memecatch = new Memecatch();
+            memecatch.cacheImages();
+            api.registerListener(new Memecatch());
+            api.registerListener(new Todo());
+            api.registerListener(new OhWhale());
+            api.registerListener(new Uptime());
+            api.registerListener(new Raw());
+            api.registerListener(new SKU());
+            api.registerListener(new Triggered());
+            api.registerListener(new Banter());
+            api.registerListener(new Facepalm());
+            api.registerListener(new Salty());
+            api.registerListener(new Juststop());
+            api.registerListener(new Questionmark());
+            api.registerListener(new Suggest());
+            api.registerListener(new Google());
+            api.registerListener(new Gatt());
+            api.connectBlocking();
             try {
-                file.createNewFile();
-            } catch (IOException e) {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }
-        api.registerListener(new Shutdown());
-        api.registerListener(new Bye());
-        api.registerListener(new Help());
-        api.registerListener(new Youtube());
-        Memecatch memecatch = new Memecatch();
-        memecatch.cacheImages();
-        api.registerListener(new Memecatch());
-        api.registerListener(new Todo());
-        api.registerListener(new OhWhale());
-        api.registerListener(new Uptime());
-        api.registerListener(new Raw());
-        api.registerListener(new SKU());
-        api.registerListener(new Triggered());
-        api.registerListener(new Banter());
-        api.registerListener(new Facepalm());
-        api.registerListener(new Salty());
-        api.registerListener(new Juststop());
-        api.registerListener(new Questionmark());
-        api.registerListener(new Suggest());
-        api.registerListener(new Google());
-        api.connectBlocking();
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        api.registerListener(new MessageCreateListener() {
-            @Override
-            public void onMessageCreate(DiscordAPI discordAPI, Message message) {
-                if (message.getContent().startsWith(Settings.getCommandStart())) {
-                    adminLogChannel.sendMessage(message.getAuthor().getName() + "(" + message.getChannelReceiver().getServer().getName() + ")" + "[" + message.getChannelReceiver().getName() + "]" + ">" + message.getContent());
-                }
-                if (message.getContent().startsWith(Settings.getCommandStart() + "snatch")) {
-                    message.delete();
-                    if (message.getMentions().size() == 1) {
-                        copyAvatar(message.getMentions().get(0));
-                        message.reply(message.getMentions().get(0).getMentionTag() + "'s profile picture is now my profile picture.");
+            api.registerListener(new MessageCreateListener() {
+                @Override
+                public void onMessageCreate(DiscordAPI discordAPI, Message message) {
+                    if (message.getContent().startsWith(Settings.getCommandStart())) {
+                        adminLogChannel.sendMessage(message.getAuthor().getName() + "(" + message.getChannelReceiver().getServer().getName() + ")" + "[" + message.getChannelReceiver().getName() + "]" + ">" + message.getContent());
                     }
-                } else if (message.isPrivateMessage() && (message.getAuthor() != discordAPI.getYourself())) {
-                    List<String> replies = new ArrayList<>();
-                    replies.add("You are dumb kid");
-                    replies.add("I know you are but what am I!");
-                    replies.add("I know you are but what am I!");
-                    replies.add("Could you restate the question please?");
-                    replies.add("Hmmm, Have we met before?");
-                    replies.add("That's what your mom said last night");
-                    replies.add("Oh yeah. Well you're a poopy pants");
-                    replies.add("Kys, I mean.... Clean your shoes..");
-                    replies.add("R000000D");
-                    replies.add("I don't understand");
+                    if (message.getContent().startsWith(Settings.getCommandStart() + "snatch")) {
+                        message.delete();
+                        if (message.getMentions().size() == 1) {
+                            copyAvatar(message.getMentions().get(0));
+                            message.reply(message.getMentions().get(0).getMentionTag() + "'s profile picture is now my profile picture.");
+                        }
+                    } else if (message.isPrivateMessage() && (message.getAuthor() != discordAPI.getYourself())) {
+                        List<String> replies = new ArrayList<>();
+                        replies.add("You are dumb kid");
+                        replies.add("I know you are but what am I!");
+                        replies.add("I know you are but what am I!");
+                        replies.add("Could you restate the question please?");
+                        replies.add("Hmmm, Have we met before?");
+                        replies.add("That's what your mom said last night");
+                        replies.add("Oh yeah. Well you're a poopy pants");
+                        replies.add("Kys, I mean.... Clean your shoes..");
+                        replies.add("R000000D");
+                        replies.add("I don't understand");
 
-                    Random random = new Random();
-                    String reply = replies.get(random.nextInt(replies.size()));
-                    message.reply(reply);
-                }
-            }
-
-            public void copyAvatar(User user) {
-                try {
-                    BufferedImage avatar = user.getAvatar().get();
-                    Exception ex = api.updateAvatar(avatar).get();
-                    if (ex != null) {
-                        ex.printStackTrace();
+                        Random random = new Random();
+                        String reply = replies.get(random.nextInt(replies.size()));
+                        message.reply(reply);
                     }
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
                 }
 
-            }
-        });
+                public void copyAvatar(User user) {
+                    try {
+                        BufferedImage avatar = user.getAvatar().get();
+                        Exception ex = api.updateAvatar(avatar).get();
+                        if (ex != null) {
+                            ex.printStackTrace();
+                        }
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            });
             Date date = new Date();
             startupTime = date.getTime();
             SetClasses();
@@ -196,6 +188,7 @@ public class Main {
         classes.add("juststop");
         classes.add("suggest");
         classes.add("google");
+        classes.add("gatt");
     }
     public static void setCommands(){
         commands.add("~ <Memes> ~");
@@ -208,6 +201,7 @@ public class Main {
         commands.add("<juststop> - Just..Stop");
         commands.add("<???> - ???");
         commands.add("~ < Misc-Commands > ~");
+        commands.add("< Gatt > - Who???");
         commands.add("< Snatch > - Have DankG snatch someones profile picture!");
         commands.add("< help > - Help menu, you obviously know that now..");
         commands.add("< uptime > - See how long I've been awake..");

@@ -7,33 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da186a66-ad9c-4c5f-a1f9-6d9205ad35fb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Home/Memes/Banter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Home/Memes/Facepalm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Home/Memes/Juststop.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Home/Memes/Salty.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Home/Memes/questionmark.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Home/MiscCommands/Suggest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Home/Searching/Google.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/suggestions.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Home/Memes/Gatt.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/DankGasai_jar/DankGasai.jar" afterPath="$PROJECT_DIR$/out/artifacts/DankGasai_jar/DankGasai.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DankGasai/Home/Administration/Uptime.class" afterPath="$PROJECT_DIR$/out/production/DankGasai/Home/Administration/Uptime.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DankGasai/Home/Main$1.class" afterPath="$PROJECT_DIR$/out/production/DankGasai/Home/Main$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DankGasai/Home/Main.class" afterPath="$PROJECT_DIR$/out/production/DankGasai/Home/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DankGasai/Home/Memes/Bye.class" afterPath="$PROJECT_DIR$/out/production/DankGasai/Home/Memes/Bye.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DankGasai/Home/Memes/Memecatch.class" afterPath="$PROJECT_DIR$/out/production/DankGasai/Home/Memes/Memecatch.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DankGasai/Home/Memes/OhWhale.class" afterPath="$PROJECT_DIR$/out/production/DankGasai/Home/Memes/OhWhale.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DankGasai/Home/Memes/Triggered.class" afterPath="$PROJECT_DIR$/out/production/DankGasai/Home/Memes/Triggered.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DankGasai/Home/Settings.class" afterPath="$PROJECT_DIR$/out/production/DankGasai/Home/Settings.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DankGasai/Home/MiscCommands/Suggest.class" afterPath="$PROJECT_DIR$/out/production/DankGasai/Home/MiscCommands/Suggest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Home/Administration/Uptime.java" afterPath="$PROJECT_DIR$/src/Home/Administration/Uptime.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Home/Main.java" afterPath="$PROJECT_DIR$/src/Home/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Home/Memes/Bye.java" afterPath="$PROJECT_DIR$/src/Home/Memes/Bye.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Home/Memes/Memecatch.java" afterPath="$PROJECT_DIR$/src/Home/Memes/Memecatch.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Home/Memes/OhWhale.java" afterPath="$PROJECT_DIR$/src/Home/Memes/OhWhale.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Home/Memes/Triggered.java" afterPath="$PROJECT_DIR$/src/Home/Memes/Triggered.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Home/Settings.java" afterPath="$PROJECT_DIR$/src/Home/Settings.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Home/MiscCommands/Suggest.java" afterPath="$PROJECT_DIR$/src/Home/MiscCommands/Suggest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suggestions.txt" afterPath="$PROJECT_DIR$/suggestions.txt" />
     </list>
     <ignored path="DankGasai.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,9 +45,33 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Home/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1258">
-              <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
+            <state relative-caret-position="361">
+              <caret line="155" column="71" selection-start-line="155" selection-start-column="71" selection-end-line="155" selection-end-column="71" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Suggest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Home/MiscCommands/Suggest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="426">
+              <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gatt.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Home/Memes/Gatt.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,11 +105,12 @@
         <option value="$PROJECT_DIR$/src/Home/Memes/Salty.java" />
         <option value="$PROJECT_DIR$/src/Home/Memes/Juststop.java" />
         <option value="$PROJECT_DIR$/src/Home/Memes/questionmark.java" />
-        <option value="$PROJECT_DIR$/suggestions.txt" />
         <option value="$PROJECT_DIR$/src/Home/Settings.java" />
         <option value="$PROJECT_DIR$/src/Home/Searching/Google.java" />
         <option value="$PROJECT_DIR$/src/Home/Administration/Uptime.java" />
+        <option value="$PROJECT_DIR$/suggestions.txt" />
         <option value="$PROJECT_DIR$/src/Home/MiscCommands/Suggest.java" />
+        <option value="$PROJECT_DIR$/src/Home/Memes/Gatt.java" />
         <option value="$PROJECT_DIR$/src/Home/Main.java" />
       </list>
     </option>
@@ -149,6 +156,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -203,11 +212,53 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DankGasai" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DankGasai" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiscCommands" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DankGasai" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DankGasai" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Memes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -511,7 +562,14 @@
       <option name="project" value="LOCAL" />
       <updated>1463970475835</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="???">
+      <created>1464292929569</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1464292929569</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -528,13 +586,13 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20095949" sideWeight="0.4946071" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.120469086" sideWeight="0.4946071" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16791044" sideWeight="0.5053929" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3621684" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16199377" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.51155627" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -554,7 +612,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed sass levels." />
     <MESSAGE value="Added triggered meme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added triggered meme" />
+    <MESSAGE value="???" />
+    <option name="LAST_COMMIT_MESSAGE" value="???" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -567,6 +626,78 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Home/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3128">
+          <caret line="210" column="45" selection-start-line="210" selection-start-column="45" selection-end-line="210" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Home/MiscCommands/Suggest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Home/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Home/MiscCommands/Suggest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="26" column="120" selection-start-line="26" selection-start-column="120" selection-end-line="26" selection-end-column="120" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Home/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Home/MiscCommands/Suggest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="26" column="120" selection-start-line="26" selection-start-column="120" selection-end-line="26" selection-end-column="120" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Home/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Home/MiscCommands/Suggest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="26" column="120" selection-start-line="26" selection-start-column="120" selection-end-line="26" selection-end-column="120" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Home/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -730,13 +861,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Home/Memes/Questionmark.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="65" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Home/Memes/Juststop.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -766,24 +890,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Home/MiscCommands/Suggest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Home/Searching/Youtube.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/suggestions.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -792,10 +902,45 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/suggestions.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Home/Memes/Questionmark.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Home/Memes/Gatt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Home/MiscCommands/Suggest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Home/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1258">
-          <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
+        <state relative-caret-position="361">
+          <caret line="155" column="71" selection-start-line="155" selection-start-column="71" selection-end-line="155" selection-end-column="71" />
           <folding />
         </state>
       </provider>

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class Suggest implements MessageCreateListener {
     private static ArrayList<String> rawr = new ArrayList<>();
     @Override
-    public void onMessageCreate(DiscordAPI discordAPI, Message message) {
+    public void onMessageCreate(DiscordAPI discordAPI, Message message)  {
         if (message.getContent().startsWith(Settings.getCommandStart())) {
             String[] args = message.getContent().split(" ");
             args[0] = args[0].replaceFirst(Settings.getCommandStart(), "");
@@ -29,27 +29,44 @@ public class Suggest implements MessageCreateListener {
                     if (rawr.contains(message.getAuthor().getId())) {
                         message.reply("You get one suggestion per restart! You have already made your suggestion :)");
                     } else {
+
                         String text = message.getAuthor().getName() + ":" + message.getContent();
-                        String finish = text.replaceFirst(Settings.getCommandStart() + "suggest", "");
+                        String finish = text.replaceFirst(Settings.getCommandStart(), "");
                         rawr.add(message.getAuthor().getId());
-                        BufferedWriter output = null;
+                        File file = new File("suggestions.txt");
+                        FileWriter fw = null;
                         try {
-                            File file = new File("suggestions.txt");
-                            output = new BufferedWriter(new FileWriter(file));
-                            output.write(finish);
-                            if (output != null) {
-                                output.close();
-                            }
+                            fw = new FileWriter(file,true);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        BufferedWriter bw = new BufferedWriter(fw);
+                        try {
+                            bw.write(finish.replaceFirst("suggest", ""));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        try {
+                            bw.newLine();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        try {
+                            bw.flush();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        try {
+                            bw.close();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
                         String another = finish.replaceFirst(message.getAuthor().getName(), "");
-
-                        message.reply(Settings.getMsgStart() + "You have successfully suggested: `" + another.replaceFirst(":", "") + "`");
+                        String lastly = another.replaceFirst("suggest", "");
+                        message.reply(Settings.getMsgStart() + "You have successfully suggested: `" + lastly.replaceFirst(":", "") + "`");
                     }
                 }
             }
         }
     }
-
 }
