@@ -7,6 +7,8 @@ import de.btobastian.javacord.entities.message.Message;
 import de.btobastian.javacord.entities.message.MessageBuilder;
 import de.btobastian.javacord.listener.message.MessageCreateListener;
 
+import static Home.Main.todo;
+
 /**
  * Created by Blitz on 5/14/2016.
  */
@@ -17,6 +19,14 @@ public class Todo implements MessageCreateListener {
             String[] args = message.getContent().split(" ");
             args[0] = args[0].replaceFirst(Settings.getCommandStart(), "");
             if(args[0].equalsIgnoreCase("todo")){
+                // Todo stuff \\
+                todo.add((todo.size() + 1) + ". " + "Add Restart Command");
+                todo.add((todo.size() + 1) + ". " + "Add Memes GaLore");
+                todo.add((todo.size() + 1) + "." + " Add leave server command");
+                todo.add((todo.size() + 1) + ". " + "Add get info command");
+                todo.add((todo.size() + 1) + ". " + "Add roll command");
+                todo.add((todo.size() + 1) + ". " + "Add flip command");
+                todo.add((todo.size() + 1) + ". " + "Add clearchat command");
                 message.delete();
                 MessageBuilder builder = new MessageBuilder();
                 message.reply(Settings.getMsgStart() + "I have PM'd you everything I have on my suggestions list that will be added, " + message.getAuthor().getMentionTag() + "!");

@@ -7,8 +7,9 @@ public class Settings {
     private static String commandStart = "-";
     private static String msgStart = "Ӝ ";
     private static String game = "Getting recoded.";
-    private static String version = "Alpha 0.1.9";
+    private static String version = "Alpha 2.0";
     private static String name = "Dank Gasai";
+    private static String adminMsg = "You are not one of my admins! Sorry!";
 
     public static String getGame()
     {
@@ -33,6 +34,9 @@ public class Settings {
         return name;
     }
 
+    public static String getAdminMsg(){
+        return adminMsg;
+    }
 
 }
 

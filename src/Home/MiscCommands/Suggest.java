@@ -2,6 +2,7 @@ package Home.MiscCommands;
 
 import Home.Settings;
 import de.btobastian.javacord.DiscordAPI;
+
 import de.btobastian.javacord.entities.message.Message;
 import de.btobastian.javacord.listener.message.MessageCreateListener;
 
@@ -29,7 +30,6 @@ public class Suggest implements MessageCreateListener {
                     if (rawr.contains(message.getAuthor().getId())) {
                         message.reply("You get one suggestion per restart! You have already made your suggestion :)");
                     } else {
-
                         String text = message.getAuthor().getName() + ":" + message.getContent();
                         String finish = text.replaceFirst(Settings.getCommandStart(), "");
                         rawr.add(message.getAuthor().getId());
@@ -63,7 +63,7 @@ public class Suggest implements MessageCreateListener {
                         }
                         String another = finish.replaceFirst(message.getAuthor().getName(), "");
                         String lastly = another.replaceFirst("suggest", "");
-                        message.reply(Settings.getMsgStart() + "You have successfully suggested: `" + lastly.replaceFirst(":", "") + "`");
+                        message.reply(Settings.getMsgStart() + "You have successfully suggested: `" + lastly.replaceFirst(":", "") + "` " + message.getAuthor().getMentionTag() + "!");
                     }
                 }
             }

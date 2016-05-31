@@ -13,19 +13,15 @@ public class Shutdown implements MessageCreateListener {
             String[] args = message.getContent().split(" ");
             args[0] = args[0].replaceFirst(Settings.getCommandStart(), "");
             if(args[0].equalsIgnoreCase("shutdown")){
-                if(message.getAuthor().getId().equals("98208218022428672")){
+                message.delete();
+                if(Main.admins.contains(message.getAuthor().getId())) {
                     Main.delay();
                     message.reply(Settings.getMsgStart() + "If....If you say so master..");
                     Main.delay();
-                    MessageBuilder builder = new MessageBuilder();
-                    builder.append("```").appendNewLine();
-                    builder.append(Settings.getMsgStart() + "Dank Gasai shutting down :(").appendNewLine();
-                    builder.append("```");
-                    Main.adminLogChannel.sendMessage(builder.build());
-                    Main.delay();
-                    System.exit(-1);
+                    System.exit(1);
 
-
+                }else{
+                    message.reply("You are not one of my admins! Sorry!");
                 }
             }
         }
