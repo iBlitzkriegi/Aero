@@ -1,6 +1,7 @@
 package Home;
 
 import Home.Administration.*;
+import Home.Administration.Shutdown;
 import Home.Memes.*;
 import Home.MiscCommands.*;
 import Home.Registers.setAdmins;
@@ -10,10 +11,11 @@ import Home.Searching.Google;
 import Home.Searching.SKU;
 import Home.Searching.Youtube;
 import de.btobastian.javacord.DiscordAPI;
+import de.btobastian.javacord.ImplDiscordAPI;
 import de.btobastian.javacord.Javacord;
-import de.btobastian.javacord.entities.Channel;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by Blitz on 5/14/2016.
@@ -23,15 +25,55 @@ public class Main {
     public static ArrayList<String> classes = new ArrayList<>();
     public static ArrayList<String> todo = new ArrayList<>();
     public static ArrayList<String> admins = new ArrayList<>();
+    public static ArrayList<String> format = new ArrayList<>();
+    private static String restartCmd = "";
+    public static String getRestartCmd(){
+        return restartCmd;
+    }
+    private static boolean shutdownNatural = false;
+    public static boolean isShutdownNatural(){
+        return shutdownNatural;
+    }
+    public static void setShutdownNatural(boolean shutdownNatural){
+        Main.shutdownNatural = shutdownNatural;
+    }
     public static long startupTime;
     private static String token;
     public static void main(String[] args) {
-        if(args.length != 1){
-            System.out.println("You must include a token after the code! Like this: java -jar DankGasai.jar EnterTokenHere");
+        if(args.length != 2){
+            System.out.println("You must include a token after the code and startup.sh name!");
+            delay();
+            setShutdownNatural(true);
+            delay();
             System.exit(-1);
         }
         token = args[0];
+        restartCmd = args[1];
         final DiscordAPI api = Javacord.getApi(token, true);
+        Runtime.getRuntime().addShutdownHook(new Thread()
+        {
+            @Override
+            public void run()
+            {
+                try{
+                    if(!isShutdownNatural()){
+                        api.setGame("Restarting!");
+                        api.setIdle(true);
+                        ((ImplDiscordAPI) api).getSocketAdapter().getWebSocket().sendClose(1000);
+                        ((ImplDiscordAPI) api).getSocketAdapter().getWebSocket().disconnect();
+                        Runtime.getRuntime().exec("./startdankbot.sh");
+
+                    }else {
+                        api.setIdle(true);
+                        System.out.println("DANK GASAI GOING DOWN!");
+                        ((ImplDiscordAPI) api).getSocketAdapter().getWebSocket().sendClose(1000);
+                        ((ImplDiscordAPI) api).getSocketAdapter().getWebSocket().disconnect();
+                    }
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
         setAdmins.setAdmins();
         api.registerListener(new Version());
         api.registerListener(new Shutdown());
@@ -60,6 +102,9 @@ public class Main {
         api.registerListener(new Reset());
         api.registerListener(new Snatch());
         api.registerListener(new RepliesListener());
+        api.registerListener(new Restart());
+        api.registerListener(new Tf());
+        api.registerListener(new CommandsListener());
         api.connectBlocking();
             try {
                 Thread.sleep(5000);

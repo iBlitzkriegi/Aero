@@ -20,13 +20,15 @@ public class Todo implements MessageCreateListener {
             args[0] = args[0].replaceFirst(Settings.getCommandStart(), "");
             if(args[0].equalsIgnoreCase("todo")){
                 // Todo stuff \\
-                todo.add((todo.size() + 1) + ". " + "Add Restart Command");
-                todo.add((todo.size() + 1) + ". " + "Add Memes GaLore");
-                todo.add((todo.size() + 1) + "." + " Add leave server command");
-                todo.add((todo.size() + 1) + ". " + "Add get info command");
-                todo.add((todo.size() + 1) + ". " + "Add roll command");
-                todo.add((todo.size() + 1) + ". " + "Add flip command");
-                todo.add((todo.size() + 1) + ". " + "Add clearchat command");
+                todo.add((todo.size() + 1) + ". " + "Add Memes GaLore.");
+                todo.add((todo.size() + 1) + ". " + "Add getserver command.");
+                todo.add((todo.size() + 1) + ". " + "Add get user info command.");
+                todo.add((todo.size() + 1) + ". " + "Add roll command.");
+                todo.add((todo.size() + 1) + ". " + "Add flip command.");
+                todo.add((todo.size() + 1) + ". " + "Add clearchat command.");
+                todo.add((todo.size() + 1) + ". " + "Add copycat command.");
+                todo.add((todo.size() + 1) + ". " + "Add bot customization commands.");
+                todo.add((todo.size() + 1) + ". " + "Github push detector?");
                 message.delete();
                 MessageBuilder builder = new MessageBuilder();
                 message.reply(Settings.getMsgStart() + "I have PM'd you everything I have on my suggestions list that will be added, " + message.getAuthor().getMentionTag() + "!");

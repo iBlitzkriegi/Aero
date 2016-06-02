@@ -6,8 +6,8 @@ package Home;
 public class Settings {
     private static String commandStart = "-";
     private static String msgStart = "Ӝ ";
-    private static String game = "Getting recoded.";
-    private static String version = "Alpha 2.0";
+    private static String game = "With Baefell.";
+    private static String version = "Alpha 2.1";
     private static String name = "Dank Gasai";
     private static String adminMsg = "You are not one of my admins! Sorry!";
 

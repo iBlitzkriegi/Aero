@@ -36,6 +36,9 @@ public class setClasses {
         classes.add("setAdmins");
         classes.add("reset");
         classes.add("version");
+        classes.add("restart");
+        classes.add("tf");
+        classes.add("commandslistener");
     }
 
 }

@@ -7,13 +7,11 @@ import de.btobastian.javacord.entities.message.Message;
 import de.btobastian.javacord.entities.message.MessageBuilder;
 import de.btobastian.javacord.listener.message.MessageCreateListener;
 
-import java.util.ArrayList;
-
+import static Home.Main.format;
 /**
  * Created by Blitz on 5/27/2016.
  */
 public class Thosepeople implements MessageCreateListener {
-    private static ArrayList<String> format = new ArrayList<>();
     @Override
     public void onMessageCreate(DiscordAPI discordAPI, Message message) {
         if(message.getContent().startsWith(Settings.getCommandStart())){
@@ -23,7 +21,7 @@ public class Thosepeople implements MessageCreateListener {
                 message.delete();
                 if(message.getMentions().size() == 1){
                     if(args.length == 2){
-                        laformat();
+                        laFormat();
                         User u = message.getMentions().get(0);
                         MessageBuilder builder = new MessageBuilder();
                         builder.append("```").appendNewLine();
@@ -35,6 +33,8 @@ public class Thosepeople implements MessageCreateListener {
                         builder.append("```");
                         builder.append(message.getAuthor().getName() + " thought you needed this format!");
                         u.sendMessage(builder.build());
+                        message.reply("I have successfully sent that user the format " + message.getAuthor().getMentionTag() + "!");
+                        format.clear();
 
                     }else{
                         message.reply("IDIOT! You gotta include a user!");
@@ -45,7 +45,7 @@ public class Thosepeople implements MessageCreateListener {
             }
         }
     }
-    public static void laformat(){
+    public static void laFormat(){
         format.add("Skript version: ");
         format.add("Skript author: ");
         format.add("Full code: ");
@@ -53,6 +53,6 @@ public class Thosepeople implements MessageCreateListener {
         format.add("Have you tried searching the forums?: ");
         format.add("Have you tried searching the docs?: ");
         format.add("What methods have you tried?: ");
-
     }
+
 }
