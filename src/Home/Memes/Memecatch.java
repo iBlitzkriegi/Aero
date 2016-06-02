@@ -44,6 +44,7 @@ public class Memecatch implements Listener {
         cacheImage("http://i.imgur.com/oI2zYZq.png", "png", "facepalm");
         cacheImage("http://i.imgur.com/Kr1FTJ6.jpg", "jpg", "Questionmark");
         cacheImage("http://i.imgur.com/uQvNaYi.jpg", "jpg", "bye");
+        cacheImage("http://i.imgur.com/mh4CgnY.jpg", "jpg", "tf");
 
         // Random memes \\
         cacheImage("http://i.imgur.com/zvbc5Fx.jpg", "jpg", "christians");
