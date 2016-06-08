@@ -10,19 +10,11 @@ public class setClasses {
         classes.add("main");
         classes.add("settings");
         classes.add("shutdown");
-        classes.add("bye");
         classes.add("memecatch");
         classes.add("todo");
         classes.add("yt");
-        classes.add("ohwhale");
         classes.add("uptime");
         classes.add("skuf");
-        classes.add("triggered");
-        classes.add("banter");
-        classes.add("facepalm");
-        classes.add("salty");
-        classes.add("questionmark");
-        classes.add("juststop");
         classes.add("suggest");
         classes.add("google");
         classes.add("gatt");
@@ -30,15 +22,20 @@ public class setClasses {
         classes.add("format");
         classes.add("botinfo");
         classes.add("reset");
-        classes.add("snatch");
         classes.add("setCommands");
         classes.add("setClasses");
-        classes.add("setAdmins");
         classes.add("reset");
         classes.add("version");
         classes.add("restart");
-        classes.add("tf");
         classes.add("commandslistener");
+        classes.add("roll");
+        classes.add("serverinfo");
+        classes.add("leaveserver");
+        classes.add("getinfo");
+        classes.add("kick");
+        classes.add("setgame");
+        classes.add("addadmin");
+        classes.add("joinserver");
     }
 
 }

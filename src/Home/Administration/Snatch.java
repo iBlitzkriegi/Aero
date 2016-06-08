@@ -12,6 +12,8 @@ import java.awt.image.BufferedImage;
 
 import java.util.concurrent.ExecutionException;
 
+import static Home.Administration.Mute.muted;
+
 /**
  * Created by Blitz on 5/31/2016.
  */
@@ -20,13 +22,16 @@ public class Snatch implements MessageCreateListener {
     public void onMessageCreate(DiscordAPI discordAPI, Message message) {
             if (message.getContent().startsWith(Settings.getCommandStart() + "snatch")) {
                 message.delete();
-                if(Main.admins.contains(message.getAuthor().getId())) {
-                    if (message.getMentions().size() == 1) {
-                        copyAvatar(message.getMentions().get(0));
-                        message.reply(message.getMentions().get(0).getMentionTag() + "'s profile picture is now my profile picture.");
+                if (!muted.contains(message.getAuthor().getId())) {
+                    if (Main.admins.contains(message.getAuthor().getId())) {
+                        if (message.getMentions().size() == 1) {
+                            message.reply("Debug");
+                            copyAvatar(message.getMentions().get(0));
+                            message.reply(message.getMentions().get(0).getMentionTag() + "'s profile picture is now my profile picture.");
+                        }
+                    } else {
+                        message.reply(Settings.getAdminMsg());
                     }
-                }else{
-                    message.reply(Settings.getAdminMsg());
                 }
             }
         }

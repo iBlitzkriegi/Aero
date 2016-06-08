@@ -7,38 +7,87 @@ import de.btobastian.javacord.entities.message.Message;
 import de.btobastian.javacord.entities.message.MessageBuilder;
 import de.btobastian.javacord.listener.message.MessageCreateListener;
 
-import static Home.Main.todo;
+import java.io.*;
+import java.util.ArrayList;
+
+import static Home.Administration.Mute.muted;
 
 /**
  * Created by Blitz on 5/14/2016.
  */
 public class Todo implements MessageCreateListener {
+    private static ArrayList<String> todo = new ArrayList<>();
     @Override
     public void onMessageCreate(DiscordAPI discordAPI, Message message) {
-        if(message.getContent().startsWith(Settings.getCommandStart() + "todo")){
+        if(message.getContent().startsWith(Settings.getCommandStart())){
             String[] args = message.getContent().split(" ");
             args[0] = args[0].replaceFirst(Settings.getCommandStart(), "");
-            if(args[0].equalsIgnoreCase("todo")){
-                // Todo stuff \\
-                todo.add((todo.size() + 1) + ". " + "Add Memes GaLore.");
-                todo.add((todo.size() + 1) + ". " + "Add getserver command.");
-                todo.add((todo.size() + 1) + ". " + "Add get user info command.");
-                todo.add((todo.size() + 1) + ". " + "Add roll command.");
-                todo.add((todo.size() + 1) + ". " + "Add flip command.");
-                todo.add((todo.size() + 1) + ". " + "Add clearchat command.");
-                todo.add((todo.size() + 1) + ". " + "Add copycat command.");
-                todo.add((todo.size() + 1) + ". " + "Add bot customization commands.");
-                todo.add((todo.size() + 1) + ". " + "Github push detector?");
-                message.delete();
-                MessageBuilder builder = new MessageBuilder();
-                message.reply(Settings.getMsgStart() + "I have PM'd you everything I have on my suggestions list that will be added, " + message.getAuthor().getMentionTag() + "!");
-                builder.append("```xml").appendNewLine().append("-= Current todo list -=").appendNewLine();
-                for (String todo : Main.todo){
-                    builder.append(Settings.getMsgStart() + "<" + todo + ">").appendNewLine();
+            if(args[0].equalsIgnoreCase("todo")) {
+                if (!muted.contains(message.getAuthor().getId())) {
+                    if (args.length == 1) {
+                        String line = null;
+                        String fileName = "todo.txt";
+                        try {
+                            FileReader fileReader = new FileReader(fileName);
+                            BufferedReader bufferedReader = new BufferedReader(fileReader);
+                            while ((line = bufferedReader.readLine()) != null) {
+                                todo.add(line);
+                            }
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        MessageBuilder builder = new MessageBuilder();
+                        builder.append("```").appendNewLine().append("-= Current Todo List=-").appendNewLine();
+                        for (String s : Todo.todo) {
+                            if (s != null) {
+                                builder.append(s).appendNewLine();
+                            }
+                        }
+                        builder.append("```");
+                        message.reply(builder.build());
+                        todo.clear();
+                    } else if (args.length > 1) {
+                        if (Main.admins.contains(message.getAuthor().getId())) {
+                            String rawr = message.getContent().replaceFirst("todo", "");
+                            File file = new File("todo.txt");
+                            FileWriter fw = null;
+                            try {
+                                fw = new FileWriter(file, true);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            BufferedWriter bw = new BufferedWriter(fw);
+                            try {
+                                bw.write(rawr);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            try {
+                                bw.newLine();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            try {
+                                bw.flush();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            try {
+                                bw.close();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            message.reply("Congratulations " + message.getAuthor().getMentionTag() + ", You have successfully added `" + rawr.replaceFirst("- ", "") + "` to my todo list!");
+                        } else {
+                            message.reply(Settings.getAdminMsg());
+                        }
+                    }
                 }
-                builder.append("```");
-                message.getAuthor().sendMessage(builder.build());
             }
         }
     }
+
+
 }

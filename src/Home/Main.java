@@ -1,10 +1,14 @@
 package Home;
 
+import Home.EditBot.Reset;
 import Home.Administration.*;
 import Home.Administration.Shutdown;
+import Home.EditBot.Setgame;
+import Home.Listeners.CommandsListener;
+import Home.Listeners.MutedListener;
+import Home.Listeners.RepliesListener;
 import Home.Memes.*;
 import Home.MiscCommands.*;
-import Home.Registers.setAdmins;
 import Home.Registers.setClasses;
 import Home.Registers.setCommands;
 import Home.Searching.Google;
@@ -14,6 +18,10 @@ import de.btobastian.javacord.DiscordAPI;
 import de.btobastian.javacord.ImplDiscordAPI;
 import de.btobastian.javacord.Javacord;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -23,13 +31,8 @@ import java.util.Date;
 public class Main {
     public static ArrayList<String> commands = new ArrayList<>();
     public static ArrayList<String> classes = new ArrayList<>();
-    public static ArrayList<String> todo = new ArrayList<>();
     public static ArrayList<String> admins = new ArrayList<>();
     public static ArrayList<String> format = new ArrayList<>();
-    private static String restartCmd = "";
-    public static String getRestartCmd(){
-        return restartCmd;
-    }
     private static boolean shutdownNatural = false;
     public static boolean isShutdownNatural(){
         return shutdownNatural;
@@ -48,7 +51,6 @@ public class Main {
             System.exit(-1);
         }
         token = args[0];
-        restartCmd = args[1];
         final DiscordAPI api = Javacord.getApi(token, true);
         Runtime.getRuntime().addShutdownHook(new Thread()
         {
@@ -74,37 +76,57 @@ public class Main {
                 }
             }
         });
-        setAdmins.setAdmins();
+        String line = null;
+        String fileName = "admins.txt";
+        try {
+            FileReader fileReader = new FileReader(fileName);
+
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            while ((line = bufferedReader.readLine()) != null) {
+                admins.add(line);
+                System.out.println(line);
+            }
+
+            bufferedReader.close();
+        } catch (FileNotFoundException ex) {
+            System.out.println("Unable to open file '" + fileName + "'");
+        } catch (IOException ex) {
+            System.out.println("Error reading file '" + fileName + "'");
+        }
+        setClasses.SetClasses();
+        setCommands.setCommands();
+        api.registerListener(new Share());
+        api.registerListener(new AddImages());
+        api.registerListener(new MutedListener());
+        api.registerListener(new Mute());
+        api.registerListener(new Joinserver());
+        api.registerListener(new Setgame());
+        api.registerListener(new AddAdmin());
+        api.registerListener(new Kick());
+        api.registerListener(new Getinfo());
+        api.registerListener(new LeaveServer());
         api.registerListener(new Version());
+        api.registerListener(new Serverinfo());
         api.registerListener(new Shutdown());
-        api.registerListener(new Bye());
         api.registerListener(new Help());
         api.registerListener(new Youtube());
         Memecatch memecatch = new Memecatch();
         memecatch.cacheImages();
         api.registerListener(new Memecatch());
         api.registerListener(new Todo());
-        api.registerListener(new OhWhale());
         api.registerListener(new Uptime());
-        api.registerListener(new Raw());
         api.registerListener(new SKU());
-        api.registerListener(new Triggered());
-        api.registerListener(new Banter());
-        api.registerListener(new Facepalm());
-        api.registerListener(new Salty());
-        api.registerListener(new Juststop());
-        api.registerListener(new Questionmark());
         api.registerListener(new Suggest());
         api.registerListener(new Google());
         api.registerListener(new Gatt());
         api.registerListener(new Botinfo());
         api.registerListener(new Thosepeople());
         api.registerListener(new Reset());
-        api.registerListener(new Snatch());
         api.registerListener(new RepliesListener());
         api.registerListener(new Restart());
-        api.registerListener(new Tf());
         api.registerListener(new CommandsListener());
+        api.registerListener(new Roll());
         api.connectBlocking();
             try {
                 Thread.sleep(5000);
@@ -113,17 +135,16 @@ public class Main {
             }
             Date date = new Date();
             startupTime = date.getTime();
-            setClasses.SetClasses();
-            setCommands.setCommands();
             System.out.println("Successfully logged in!");
             delay();
             System.out.println("Setting game to " + Settings.getGame());
-            api.setGame(Settings.getGame());
+            if(api.getYourself().getGame() != Settings.getGame()){
+                api.setGame(Settings.getGame());
+            }
             delay();
             System.out.println("Done! Setting name to " + Settings.getName());
             delay();
-            if (api.getYourself().getName().equals(Settings.getName())) {
-            } else {
+            if (!api.getYourself().getName().equals(Settings.getName())) {
                 api.updateUsername(Settings.getName());
             }
             System.out.println("Name set! Moving on.. Parsing all classes now.");

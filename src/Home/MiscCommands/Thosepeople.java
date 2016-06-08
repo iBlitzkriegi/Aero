@@ -7,6 +7,7 @@ import de.btobastian.javacord.entities.message.Message;
 import de.btobastian.javacord.entities.message.MessageBuilder;
 import de.btobastian.javacord.listener.message.MessageCreateListener;
 
+import static Home.Administration.Mute.muted;
 import static Home.Main.format;
 /**
  * Created by Blitz on 5/27/2016.
@@ -14,33 +15,35 @@ import static Home.Main.format;
 public class Thosepeople implements MessageCreateListener {
     @Override
     public void onMessageCreate(DiscordAPI discordAPI, Message message) {
-        if(message.getContent().startsWith(Settings.getCommandStart())){
+        if(message.getContent().startsWith(Settings.getCommandStart())) {
             String[] args = message.getContent().split(" ");
             args[0] = args[0].replaceFirst(Settings.getCommandStart(), "");
-            if(args[0].equalsIgnoreCase("thosepeople")){
+            if (args[0].equalsIgnoreCase("thosepeople")) {
                 message.delete();
-                if(message.getMentions().size() == 1){
-                    if(args.length == 2){
-                        laFormat();
-                        User u = message.getMentions().get(0);
-                        MessageBuilder builder = new MessageBuilder();
-                        builder.append("```").appendNewLine();
-                        for(String s : format){
-                            if(s != ""){
-                                builder.append(s).appendNewLine().appendNewLine();
+                if (!muted.contains(message.getAuthor().getId())) {
+                    if (message.getMentions().size() == 1) {
+                        if (args.length == 2) {
+                            laFormat();
+                            User u = message.getMentions().get(0);
+                            MessageBuilder builder = new MessageBuilder();
+                            builder.append("```").appendNewLine();
+                            for (String s : format) {
+                                if (s != "") {
+                                    builder.append(s).appendNewLine().appendNewLine();
+                                }
                             }
-                        }
-                        builder.append("```");
-                        builder.append(message.getAuthor().getName() + " thought you needed this format!");
-                        u.sendMessage(builder.build());
-                        message.reply("I have successfully sent that user the format " + message.getAuthor().getMentionTag() + "!");
-                        format.clear();
+                            builder.append("```");
+                            builder.append(message.getAuthor().getName() + " thought you needed this format!");
+                            u.sendMessage(builder.build());
+                            message.reply("I have successfully sent that user the format " + message.getAuthor().getMentionTag() + "!");
+                            format.clear();
 
-                    }else{
-                        message.reply("IDIOT! You gotta include a user!");
+                        } else {
+                            message.reply("IDIOT! You gotta include a user!");
+                        }
+                    } else {
+                        message.reply("Must included a user");
                     }
-                }else{
-                    message.reply("Must included a user");
                 }
             }
         }
