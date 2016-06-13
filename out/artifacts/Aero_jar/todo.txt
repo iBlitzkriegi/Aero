@@ -1,0 +1,2 @@
+- Add GitHub push detector?
+- Find by game

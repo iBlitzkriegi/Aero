@@ -2,7 +2,9 @@
   <dictionary name="Blitz">
     <words>
       <w>admined</w>
+      <w>channelname</w>
       <w>getinfo</w>
+      <w>unmuted</w>
     </words>
   </dictionary>
 </component>
