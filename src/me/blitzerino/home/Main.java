@@ -31,6 +31,7 @@ import java.util.Date;
  */
 public class Main {
     public static ArrayList<String> commands = new ArrayList<>();
+    public static ArrayList<String> commands2 = new ArrayList<>();
     public static ArrayList<String> classes = new ArrayList<>();
     public static ArrayList<String> admins = new ArrayList<>();
     public static ArrayList<String> suggestions = new ArrayList<>();

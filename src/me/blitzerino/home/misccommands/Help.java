@@ -6,6 +6,7 @@ import de.btobastian.javacord.DiscordAPI;
 import de.btobastian.javacord.entities.message.Message;
 import de.btobastian.javacord.entities.message.MessageBuilder;
 import de.btobastian.javacord.listener.message.MessageCreateListener;
+import me.blitzerino.home.registers.setCommands;
 
 import static me.blitzerino.home.administration.Mute.muted;
 
@@ -22,13 +23,24 @@ public class Help implements MessageCreateListener {
                 if (args[0].equalsIgnoreCase("help")) {
                     message.delete();
                     MessageBuilder builder = new MessageBuilder();
+                    MessageBuilder builder2 = new MessageBuilder();
                     message.reply(Settings.getMsgStart() + " I've PM'd you my command list, " + message.getAuthor().getMentionTag());
                     builder.append("```xml").appendNewLine();
+                    builder2.append("```xml").appendNewLine();
+                    Main.commands.clear();
+                    Main.commands2.clear();
+                    setCommands.setCommands();
                     for (String command : Main.commands) {
                         builder.append(Settings.getMsgStart() + command).appendNewLine();
                     }
+                    for(String command2 : Main.commands2){
+                        builder2.append(Settings.getMsgStart() + command2).appendNewLine();
+                    }
                     builder.append("```");
+                    builder2.append("```");
                     message.getAuthor().sendMessage(builder.build());
+                    Main.delay();
+                    message.getAuthor().sendMessage(builder2.build());
                 }
             }
         }
