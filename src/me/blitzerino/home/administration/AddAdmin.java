@@ -70,14 +70,13 @@ public class AddAdmin implements MessageCreateListener {
                 } else {
                     MessageBuilder builder = new MessageBuilder();
                     builder.append(Settings.getMsgStart() + "Not sure " + message.getAuthor().getMentionTag() + "? Here is a list of all the current admin's ID's.").appendNewLine();
-                    builder.append("```").appendNewLine();
                     for(String j : Main.admins){
                         if(j!=""){
                             builder.append("<@" + j + ">").appendNewLine();
                         }
                     }
-                    builder.append("```");
-                    message.reply(builder.build());
+                    message.getAuthor().sendMessage(builder.build());
+                    message.reply("I could tell you weren't sure " + message.getAuthor().getMentionTag() + "! I sent you my current admin list.");
                 }
             }
         }
